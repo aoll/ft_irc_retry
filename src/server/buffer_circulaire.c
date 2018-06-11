@@ -79,22 +79,19 @@ int				ft_buf_get_data(t_buf *buf_e, char *dest)
 	int	i;
 
 	i = 0;
-	printf("%s\n", "ft_buf_get_data 0");
 	if (buf_e->size == (size_t)(buf_e->end_buf - buf_e->start_buf))
 	{
 		*dest = *buf_e->start_data;
 		dest++;
 		buf_e->start_data++;
 		i++;
-		printf("%s\n", "ft_buf_get_data 1");
 	}
 	if (buf_e->start_data == buf_e->end_buf)
 		buf_e->start_data = buf_e->start_buf;
-	// printf("%s\n", "ft_buf_get_data 2");
 	while (buf_e->start_data != buf_e->end_data)
 	{
 		if (i >= BUF_SIZE)
-			break;
+			break ;
 		*dest = *buf_e->start_data;
 		dest++;
 		buf_e->start_data++;
@@ -102,7 +99,6 @@ int				ft_buf_get_data(t_buf *buf_e, char *dest)
 			buf_e->start_data = buf_e->start_buf;
 		i++;
 	}
-	// printf("%s\n", "ft_buf_get_data 3");
 	buf_e->size = 0;
 	return (i);
 }

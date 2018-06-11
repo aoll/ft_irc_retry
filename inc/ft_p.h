@@ -33,8 +33,8 @@
 # define NO_LOG						0
 # define MAGIC_NUMER				42
 # define SIZE_HEADER				(sizeof(uint32_t) * 2)
-# define BUF_SIZE					256
-# define BUF_SIZE_MAX				4096
+# define BUF_SIZE				 	2048
+# define BUF_SIZE_MAX			4096
 
 # define EXIT_FAILLURE				1
 # define EXIT_SUCCESS				0

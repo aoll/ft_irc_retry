@@ -17,16 +17,16 @@ static int	set_name_check(t_buf *buf, const char *cmd)
 	int	i;
 	int	len;
 
-	i = ft_strlen(NICKNAME);
-	len = ft_strlen(cmd + ft_strlen(NICKNAME));
+	i = ft_strlen(NICKNAME) + 1;
+	len = ft_strlen(cmd);
 	if (!len)
 	{
 		buf_send_error(buf, NICKNAME_NEEDED, ft_strlen(NICKNAME_NEEDED));
 		return (EXIT_FAILURE);
 	}
-	while (i < len - 1)
+	while (i < len)
 	{
-		if (cmd[i] == ' ' || cmd[i] == '\t' || cmd[i] == '\n' || cmd[i] == ' ')
+		if (cmd[i] == ' ' || cmd[i] == '\t' || cmd[i] == '\n')
 		{
 			buf_send_error(
 				buf, NICKNAME_NOT_SPACE, ft_strlen(NICKNAME_NOT_SPACE));

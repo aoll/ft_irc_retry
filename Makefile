@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 
-DEBUG=yes
+DEBUG=no
 CC=clang
 
 ifeq ($(DEBUG), yes)
@@ -20,7 +20,7 @@ else
 		CFLAGS=  -Wall -Wextra -Werror
 endif
 
-NAME_SERVER = serveur
+NAME_SERVER = server
 
 NAME_CLIENT = client
 
